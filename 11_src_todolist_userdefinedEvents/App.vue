@@ -1,14 +1,14 @@
 <template>
   <div class="demo">
-    <MyHeader :addTodo="addTodo"></MyHeader>
+    <MyHeader @addTodo="addTodo"></MyHeader>
     <MyList 
       :todos="todos" 
       :checkTodo="checkTodo"
       :deleteTodo="deleteTodo"></MyList>
     <MyFooter 
       :todos="todos"
-      :removeAllTodos="removeAllTodos"
-      :checkAllTodos="checkAllTodos"></MyFooter>
+      @removeAllTodos="removeAllTodos"
+      @checkAllTodos="checkAllTodos"></MyFooter>
   </div>
 </template>
 <script>

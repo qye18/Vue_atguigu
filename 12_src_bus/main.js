@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-
 Vue.config.productionTip = false
 
 new Vue({
+  el:'#app',
   render: h => h(App),
-}).$mount('#app')
+  beforeCreate(){
+    Vue.prototype.$bus = this // 安装全局总线
+  }
+})
+

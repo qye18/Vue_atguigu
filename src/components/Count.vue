@@ -26,8 +26,9 @@ export default {
     }
   },
   computed:{
-    ...mapState(['sum', 'school', 'student','persons']),
-    ...mapGetters(['BigSum'])
+    ...mapState('countAbout',['sum', 'school', 'student']),
+    ...mapState('personAbout',['persons']),
+    ...mapGetters('countAbout',['BigSum'])
   },
   methods: {
     // addNumber() {
@@ -36,7 +37,7 @@ export default {
     // subNumer() {
     //   this.$store.commit('SUB', this.number)
     // },
-    ...mapMutations({addNumber:'ADD', subNumer:'SUB'}),
+    ...mapMutations('countAbout',{addNumber:'ADD', subNumer:'SUB'}),
 
     // oddAdd() {
     //   this.$store.dispatch('oddAdd', this.number);
@@ -44,7 +45,7 @@ export default {
     // waitAdd() {
     //   this.$store.dispatch('waitAdd', this.number);
     // }
-    ...mapActions(['oddAdd', 'waitAdd']),
+    ...mapActions('countAbout',['oddAdd', 'waitAdd']),
   },
 
 }

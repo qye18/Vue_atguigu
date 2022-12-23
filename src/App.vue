@@ -13,7 +13,7 @@ export default {
   name:'App',
   components: {Count, Person},
   mounted() {
-    // console.log(this.$store);
+    console.log(this.$store);
   }
 }
 </script>

@@ -2,20 +2,10 @@
 
 import Vuex from 'vuex'
 import Vue from 'vue'
+import {nanoid} from 'nanoid'
 Vue.use(Vuex);
 
 const actions = {
-  /* 'add' and 'sub' are not necessary, and can be ignored since there is no backend 
-    and it does not handle anything except commiting to mutations. by removing these two, need to change methods used in Count
-    from dispatch to commit
-  */
-  // add(context, value){
-  //   // console.log(a,b);
-  //   context.commit('ADD', value);
-  // },
-  // sub(context, value) {
-  //   context.commit('SUB', value);
-  // },
   oddAdd(context, value) {
     if (context.state.sum % 2) {
       context.commit('ADD', value)
@@ -34,12 +24,16 @@ const mutations = {
   },
   SUB(state, value) {
     state.sum -= value
+  },
+  ADDPERSON(state, value) {
+    state.persons.unshift({id:nanoid(), name:value})
   }
 };
 const state = {
   sum:0,
   school:'atguigu',
-  student:'张三'
+  student:'张三',
+  persons:[{id:'001',name:'张三'}]
 };
 
 const getters = {

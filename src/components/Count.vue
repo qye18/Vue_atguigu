@@ -3,6 +3,7 @@
     <h4>当前 求和为：{{ sum }}</h4>
     <h4>当前 求和放大十倍后为：{{ BigSum }}</h4>
     <h4>学校: {{ school }} 学生: {{ student }}</h4>
+    <h4 style="color:red;">Person组件的总人数是: {{ persons.length }}</h4>
     <select v-model="number">
       <option :value="1">1</option>
       <option :value="2">2</option>
@@ -25,7 +26,7 @@ export default {
     }
   },
   computed:{
-    ...mapState(['sum', 'school', 'student']),
+    ...mapState(['sum', 'school', 'student','persons']),
     ...mapGetters(['BigSum'])
   },
   methods: {

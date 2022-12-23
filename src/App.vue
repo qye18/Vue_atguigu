@@ -1,33 +1,22 @@
 <template>
   <div class="container">
     <Count></Count>
+    <hr>
+    <Person></Person>
   </div>
 </template>
 
 <script>
-import Count from './components/Count.vue'
+import Count from './components/Count'
+import Person from './components/Person'
 export default {
   name:'App',
-  components: {Count},
+  components: {Count, Person},
   mounted() {
-    console.log(this.$store);
+    // console.log(this.$store);
   }
 }
 </script>
 <style>
-  .container, .foot {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  h4 {text-align: center; padding-top: 10px;}
- 
-  ul {
-    padding-bottom: 10px;
-  }
-  img, video {
-    width: 100%;
-  }
-  img {height: 100px;}
 
 </style>
